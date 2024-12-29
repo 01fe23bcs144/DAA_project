@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City AAROHAN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #050012;
+            color: aliceblue;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+        }
+        h2 {
+            margin-top: 10px;
+            font-size: 1.5em;
+        }
+        .subtitle {
+            display: block;
+            margin-left: 5em;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: black;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #020146, #000088);
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0c0024;
+        }
+        #content {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-family: 'Times New Roman', Times, serif;
+            display: none;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+            border: 1px solid #040000;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #080025;
+        }
+        pre {
+            background-color: #ffffff;
+            color: #000;
+            padding: 10px;
+            border-color: #0c0024;
+            border-radius: 10px;
+            overflow: auto;
+        }
+
+        .home-box {
+    background: linear-gradient(145deg, #060011, #120136);
+    color: #f5f5f5;
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid #3498db;
+    display: inline-block;
+    box-shadow: 0 6px 15px rgba(0, 0, 116, 0.5);
+    width: 1100px; /* Fixed width */
+    height: 125px; /* Fixed height */
+    overflow: hidden; /* Prevent overflow of content */
+}
+.home h2 {
+            font-size: 50px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #090161, #12d5f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subheading {
+            margin-top: -10px;
+            font-size: 24px;
+            font-style: italic;
+            color: #1a74ce;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            background-color: #f4f4f4;
+            border: 1px solid #0a0909;
+            padding: 10px;
+            text-align: left;
+            color:black;
+        }
+        th {
+            background-color: #f4f4f4;
+            color:black;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+            color:black;
+        }
+    </style>
+    <script>
+
+        function showSDGMapping() {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <h3>SDG Mapping</h3>
+
+                <h4>1. Transportation</h4>
+                <ul>
+                    <p><strong>SDG 9:</strong> Industry, Innovation, and Infrastructure</p>
+                    <li>9.1.1: Proportion of rural population living within 2 km of an all-season road</li>
+                    <li>9.4.1: CO₂ emissions per unit of GDP (by sector, including transport)</li>
+                    <p><strong>SDG 11:</strong> Sustainable Cities and Communities</p>
+                    <li>11.2.1: Proportion of population with access to public transport by age, sex, and persons with disabilities</li>
+                    <p><strong>SDG 13:</strong> Climate Action</p>
+                    <li>13.2.2: Total greenhouse gas emissions per year by transport and energy sectors</li>
+                </ul>
+                <h4>2. Tourism</h4>
+                <ul>
+                    <p><strong>SDG 8:</strong> Decent Work and Economic Growth</p>
+                    <li>8.9.1: Tourism direct GDP as a proportion of total GDP and in growth rate</li>
+                    <li>8.9.2: Number of jobs in sustainable tourism industries</li>
+                    <p><strong>SDG 12:</strong> Responsible Consumption and Production</p>
+                    <li>12.b.1: Implementation of sustainable tourism policies and plans with monitoring tools</li>
+                    <p><strong>SDG 11:</strong> Sustainable Cities and Communities</p>
+                    <li>11.4.1: Expenditure on cultural and natural heritage as a proportion of total GDP</li>
+                </ul>
+                <h4>3. Industries</h4>
+                <ul>
+                    <p><strong>SDG 9:</strong> Industry, Innovation, and Infrastructure</p>
+                    <li>9.2.1: Manufacturing value added as a proportion of GDP</li>
+                    <li>9.4.1: CO₂ emissions per unit of value added (for industries)</li>
+                    <p><strong>SDG 12:</strong> Responsible Consumption and Production</p>
+                    <li>12.5.1: National recycling rate and tons of material recycled</li>
+                    <p><strong>SDG 7:</strong> Affordable and Clean Energy</p>
+                    <li>7.3.1: Energy intensity measured in terms of primary energy and GDP</li>
+                </ul>
+                <h4>4. Wind Energy</h4>
+                <ul>
+                    <p><strong>SDG 7:</strong> Affordable and Clean Energy</p>
+                    <li>7.2.1: Renewable energy share in the total final energy consumption</li>
+                    <li>7.b.1: Investment in renewable energy as a proportion of GDP</li>
+                    <p><strong>SDG 13:</strong> Climate Action</p>
+                    <li>13.1.3: Number of countries integrating climate change mitigation policies</li>
+                    <p><strong>SDG 9:</strong> Industry, Innovation, and Infrastructure</p>
+                    <li>9.b.1: Proportion of medium and high-tech industry value added in total industry value added</li>
+                </ul>
+            `;
+            content.style.display = 'block';
+        }
+
+        function showBusinessCases() {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <h3>Business Cases</h3>
+                <h4>Green Industries and Manufacturing</h4>
+                <p>Transitioning industries to energy-efficient operations and adopting renewable energy sources while promoting a circular economy.</p>
+                <h4>Wind Energy Development</h4>
+                <p>Utilizing wind farms to generate clean energy, reducing dependency on fossil fuels and providing sustainable power to the city.</p>
+                <h4>Sustainable Tourism Development</h4>
+                <p>Promoting eco-tourism by integrating technology, preserving local culture, and ensuring minimal environmental impact to attract and engage tourists.</p>
+                <h4>Smart Transportation Solutions</h4>
+                <p>Enhancing urban mobility through electric vehicles, public transport optimization, and intelligent traffic systems for efficient and sustainable travel.</p>
+            `;
+            content.style.display = 'block';
+        }
+
+        function showCodeImplementation() {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+             <h3>Code Implementation for Smart City Domains</h3>
+        <h4>1. Transportation</h4>
+        <ul>
+            <li><strong>Dijkstra's Algorithm:</strong> Find the shortest route between two points in a city's transportation network.</li>
+            <li><strong>Kruskal's Algorithm:</strong> Design an efficient road network by finding the minimum spanning tree of connected intersections.</li>
+            <li><strong>BFS/DFS:</strong> Traverse through routes to detect congested areas or alternate paths.</li>
+            <li><strong>Heap:</strong> Manage priority queues for traffic signal optimization and emergency vehicle routing.</li>
+            <li><strong>Union-Find (Disjoint Sets):</strong> Track connected roads and highways to monitor accessibility during maintenance or natural disasters.</li>
+        </ul>
+        <h4>2. Tourism</h4>
+        <ul>
+            <li><strong>N-Queen Problem:</strong> Place tourist information centers strategically to avoid overlapping services.</li>
+            <li><strong>Subset Generation:</strong> Create customizable travel packages for visitors.</li>
+            <li><strong>Knuth-Morris-Pratt (KMP):</strong> Search and recommend travel itineraries based on user preferences.</li>
+            <li><strong>Rabin-Karp:</strong> Validate and verify ticket IDs or booking references.</li>
+            <li><strong>Floyd-Warshall Algorithm:</strong> Find all-pairs shortest paths to suggest optimal routes between attractions.</li>
+            <li><strong>DFS:</strong> Explore tourist destinations in a depth-first manner for package creation.</li>
+        </ul>
+        <h4>3. Industries</h4>
+        <ul>
+            <li><strong>HashMaps:</strong> Efficiently store and retrieve industry data, such as factory locations, resources, and outputs.</li>
+            <li><strong>Quick Sort/Merge Sort:</strong> Rank industries based on output, energy consumption, or sustainability practices.</li>
+            <li><strong>Bellman-Ford Algorithm:</strong> Analyze industrial supply chains and calculate delivery costs with negative weights.</li>
+            <li><strong>Kruskal's Algorithm:</strong> Build optimized industrial zones with cost-effective infrastructure.</li>
+        </ul>
+        <h4>4. Windmills</h4>
+        <ul>
+            <li><strong>Segment Trees:</strong> Monitor real-time energy production across different windmill clusters and detect anomalies.</li>
+            <li><strong>Heap:</strong> Allocate energy to sectors based on priority during peak demand.</li>
+            <li><strong>Union-Find:</strong> Manage connectivity between windmill units and power grids.</li>
+        </ul>
+                <h3>Code Implementation for Smart City Domains</h3>
+                <h4>Dijkstra's Algorithm (for Transportation)</h4>
+                 <p>This algorithm calculates the shortest path between nodes in a transportation network, which can be applied to optimize routes in smart city transportation systems.</p>
+                
+               <pre>
+                    #include &lt; iostream &gt;
+using namespace std;
+int v = 5;
+int m[10][10] = {{0,1,1,0,0}, {1,0,0,1,1},
+{1,0,0,0,1}, {0,1,0,0,0}, {0,1,1,0,0}};
+int visited[10];
+void dfs(int m[10][10], int v, int source) {
+visited[source] = 1;
+for (int i = 0; i < v; i++) {
+if (m[source][i] == 1 && visited[i] == 0) {
+cout << i << "\t";
+dfs(m, v, i);
+}
+}
+}
+int main() {
+int source;
+for (int i = 0; i < v; i++)
+visited[i] = 0;
+
+
+cout &lt;&lt; "Enter the source vertex: ";
+cin &gt;&gt; source;
+
+cout &lt;&lt; "The DFS Traversal is... \n";
+cout &lt;&lt; source &lt;&lt; "\t";
+dfs(m, v, source);
+
+return 0;
+}
+                </pre>
+               
+                <h4>DFS traversal code (For tourism)</h4>
+                <p>To explore tourist destinations in a depth-first manner for package creation.</p>
+                <pre>
+#include &lt;iostream&gt;
+using namespace std;
+int v = 5;
+int m[10][10] = {{0,1,1,0,0}, {1,0,0,1,1},
+{1,0,0,0,1}, {0,1,0,0,0}, {0,1,1,0,0}};
+int visited[10];
+
+
+void dfs(int m[10][10], int v, int source) {
+visited[source] = 1;
+for (int i = 0; i < v; i++) {
+if (m[source][i] == 1 && visited[i] == 0) {
+cout << i << "\t";
+dfs(m, v, i);
+}
+}
+}
+
+
+int main() {
+int source;
+for (int i = 0; i < v; i++)
+visited[i] = 0;
+
+
+cout &lt;&lt; "Enter the source vertex: ";
+cin &gt;&gt; source;
+
+cout &lt;&lt; "The DFS Traversal is... \n";
+cout &lt;&lt; source &lt;&lt; "\t";
+dfs(m, v, source);
+
+return 0;
+
+    
+
+  
+
+}
+                </pre>
+                <h4> Kruskal's Code code (For industries)</h4>
+           <p>Build optimized industrial zones with cost-effective infrastructure.</p>
+    <pre>
+       
+#include &lt; iostream &gt;
+using namespace std;
+
+
+class d {
+public:
+int u;
+int v;
+int w;
+};
+
+
+int find(int arr[50], int u, int v) {
+if (arr[u] == arr[v]) {
+return 1;
+} else {
+return 0;
+}
+}
+
+void union_set(int arr[50], int u, int v, int n) {
+int temp = arr[u];
+for (int i = 0; i < n; i++) {
+if (arr[i] == temp) {
+arr[i] = arr[v];
+}
+}
+}
+
+
+void Merge(d B[], int p, d C[], int q, d A[]) {
+int i = 0, j = 0, k = 0;
+
+
+while (i &lt; p && j &lt; q) {
+    if (B[i].w &lt;= C[j].w) {
+        A[k++] = B[i++];
+    } else {
+        A[k++] = C[j++];
+    }
+}
+while (i &lt; p) {
+    A[k++] = B[i++];
+}
+while (j &lt; q) {
+    A[k++] = C[j++];
+}
+}
+
+
+void MergeSort(d A[], int n) {
+if (n > 1) {
+int mid = n / 2;
+
+
+    d B[50], C[50];
+    for (int i = 0; i &lt; mid; i++) {
+        B[i] = A[i];
+    }
+    for (int i = mid; i &lt; n; i++) {
+        C[i - mid] = A[i];
+    }
+
+    MergeSort(B, mid);
+    MergeSort(C, n - mid);
+    Merge(B, mid, C, n - mid, A);
+}
+}
+
+
+int main() {
+int n, e;
+cout << "Enter the number of vertices and edges: ";
+cin >> n >> e;
+
+
+d d1[50];
+cout &lt;&lt; "Enter the edges (u v w):" &lt;&lt; endl;
+}
+
+        </pre>
+       
+                <h4>Heap code (For windmills)</h4>
+                <p> Allocate energy to sectors based on priority during peak demand.</p> 
+    <pre>
+#include &lt; iostream &gt;
+#include &lt; vector &gt;
+using namespace std;
+
+class MaxHeap {
+private:
+vector<int> heap;
+
+void HeapifyUp(int i) {
+    while (i > 1 && heap[i / 2] < heap[i]) {
+        swap(heap[i], heap[i / 2]);
+        i = i / 2;
+    }
+}
+
+void HeapifyDown(int i) {
+    int n = heap.size() - 1;
+    int v = heap[i];
+    bool isHeap = false;
+
+    while (!isHeap && 2 * i <= n) {
+        int j = 2 * i;
+
+        if (j < n && heap[j] < heap[j + 1])
+            j++;
+
+        if (v >= heap[j])
+            isHeap = true;
+        else {
+            heap[i] = heap[j];
+            i = j;
+        }
+    }
+    heap[i] = v;
+}
+
+public:
+MaxHeap() {
+    heap.push_back(-1); // Placeholder to simplify index calculations
+}
+
+void insert(int value) {
+    heap.push_back(value);
+    HeapifyUp(heap.size() - 1);
+}
+
+void deleteMax() {
+    if (heap.size() > 1) {
+        cout << "Deleted root: " << heap[1] << endl;
+        heap[1] = heap.back();
+        heap.pop_back();
+        if (heap.size() > 1) {
+            HeapifyDown(1);
+        }
+    } else {
+        cout << "Heap is empty!" << endl;
+    }
+}
+
+void printHeap() {
+    if (heap.size() > 1) {
+        cout << "Heap elements: ";
+        for (size_t i = 1; i < heap.size(); i++) {
+            cout << heap[i] << " ";
+        }
+        cout << endl;
+    } else {
+        cout << "Heap is empty!" << endl;
+    }
+}
+
+void printRoot() {
+    if (heap.size() > 1) {
+        cout << "Root element (max): " << heap[1] << endl;
+    } else {
+        cout << "Heap is empty!" << endl;
+    }
+}
+};
+
+int main() {
+MaxHeap maxHeap;
+int choice, value;
+
+do {
+    cout << "Menu:";
+    cout << "1. Insert";
+    cout << "2. Delete Root";
+    cout << "3. Print Heap";
+    cout << "4. Print Root";
+    cout << "5. Exit";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    switch (choice) {
+        case 1:
+            cout << "Enter value to insert: ";
+            cin >> value;
+            maxHeap.insert(value);
+            break;
+        case 2:
+            maxHeap.deleteMax();
+            break;
+        case 3:
+            maxHeap.printHeap();
+            break;
+        case 4:
+            maxHeap.printRoot();
+            break;
+        case 5:
+            cout << "Exit\n";
+            break;
+        default:
+            cout << "Invalid choice! Please try again.\n";
+    }
+} while (choice != 5);
+
+return 0;
+}
+        </pre>
+               `;
+            content.style.display = 'block';
+        }
+        function showCourseReflection() {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+            <h2>1. What are the kinds of problems we see in nature? (Iteration, Recursion, Backtracking)</h2>
+        <p>Nature employs remarkable processes that mirror algorithmic principles. For instance:</p>
+        <ul>
+            <li><strong>Iteration:</strong> The cyclical change of seasons and how animals forage for food, the construction methods of bees, and the behavior of tidal movements.</li>
+            <li><strong>Recursion:</strong> Observed in the formation of snowflakes, the branching patterns of trees, and the replication of DNA.</li>
+            <li><strong>Backtracking:</strong> Ants demonstrate this concept as they explore various pathways to food and adjust their routes based on their findings. Additionally, it is evident in how spiders repair their webs, how bees locate flowers, how fish navigate streams, and how plants develop their root systems.</li>
+        </ul>
+
+ 
+        <h2>2. What is space and time efficiency? Why are they important? Explain the different classes of problems and orders of growth.</h2>
+        <p><strong>Space Efficiency:</strong> This aspect evaluates the additional memory requirements of an algorithm.</p>
+        <p><strong>Time Efficiency:</strong> This refers to the duration an algorithm requires to execute or the speed at which it performs tasks, which is commonly referred to as time complexity.</p>
+        <h3>Classes of Problems and Orders of Growth</h3>
+        <ul>
+            <li><strong>Constant (O(1)):</strong> Represents the fastest class, suitable for simple actions, such as retrieving an item from an array.</li>
+            <li><strong>Logarithmic (O(log n)):</strong> Commonly seen in binary search algorithms.</li>
+            <li><strong>Linear (O(n)):</strong> This class pertains to sequentially traversing a list.</li>
+            <li><strong>Quadratic (O(n²)):</strong> Typically associated with nested loops, such as bubble sort.</li>
+            <li><strong>Exponential (O(2ⁿ)):</strong> Relevant in more complex scenarios, exemplified by the N-Queens problem.</li>
+        </ul>
+ 
+        <h2>3. Takeaway from different design principles from Chapter 2</h2>
+        <ul>
+            <li><strong>Divide and Conquer:</strong> Splitting problems into smaller, manageable components for easier resolution (as demonstrated in merge sort).</li>
+            <li><strong>Greedy Approach:</strong> Making optimal local decisions at each stage to achieve a globally optimal solution (e.g., Kruskal’s algorithm for Minimum Spanning Trees).</li>
+            <li><strong>Dynamic Programming:</strong> Addressing overlapping subproblems systematically (such as computing the Fibonacci sequence).</li>
+            <li><strong>Backtracking:</strong> Exploring all potential solutions methodically (e.g., the N-Queens problem).</li>
+        </ul>
+
+        <h2>4. The hierarchical data and how different tree data structures solve and optimize over the problem scenarios.</h2>
+        <ul>
+            <li><strong>Binary Search Tree (BST):</strong> Enables efficient search, insertion, and deletion operations.</li>
+            <li><strong>AVL Tree:</strong> A self-balancing variant of BST that maintains operations at O(log n).</li>
+            <li><strong>Red-Black Tree:</strong> Facilitates memory balancing in complex scenarios, such as database indexing.</li>
+            <li><strong>Heap:</strong> Commonly utilized in priority queues and sorting algorithms (e.g., heap sort).</li>
+            <li><strong>Trie:</strong> Particularly beneficial for prefix-based searches, which enhance functionalities like autocomplete.</li>
+        </ul>
+
+        <h2>5. The need of array query algorithms and their implications. Their applications and principles need to be discussed.</h2>
+        <p>Array query algorithms significantly improve data retrieval and update efficiency:</p>
+        <ul>
+            <li><strong>Segment Tree:</strong> Efficiently manages range queries, enabling operations such as finding sums or minimums in logarithmic time.</li>
+            <li><strong>Fenwick Tree (BIT):</strong> Optimizes prefix sum queries and updates.</li>
+        </ul>
+        <p>Applications include:</p>
+        <ul>
+            <li>Analyzing meteorological data through range queries.</li>
+            <li>Financial systems tracking cumulative transactions.</li>
+        </ul>
+        <h2>6. Trees vs. Graphs: Structure and Applications</h2>
+        <ul>
+            <li><strong>Tree</strong>: A simple structure characterized by a single root and no cycles.
+                <ul>
+                    <li><strong>Traversal Methods</strong>: Includes Preorder, Inorder, and Postorder (as applicable in directory structured data).</li>
+                </ul>
+            </li>
+            <li><strong>Graph</strong>: A complex network of interconnected nodes that may include cycles.
+                <ul>
+                    <li><strong>Traversal Methods</strong>: Engages techniques like Breadth-First Search (BFS) and Depth-First Search (DFS), which are suitable for social networks and shortest path determination.</li>
+                </ul>
+            </li>
+        </ul>
+        <strong>Applications:</strong>
+        <ul>
+            <li>Trees are exceptionally useful for hierarchical systems, such as file storage management.</li>
+            <li>Graphs offer flexibility and are applied in areas like navigation and network routing.</li>
+        </ul>
+
+        <h2>7. Sorting and Searching Algorithms</h2>
+        <ul>
+            <li><strong>Sorting</strong>: The process of arranging data, with algorithms such as quicksort suitable for vast datasets, and mergesort providing reliable sorting mechanisms.</li>
+            <li><strong>Searching</strong>: A method to locate specific elements, exemplified by binary search in sorted arrays.</li>
+        </ul>
+        <strong>Real-World Applications:</strong>
+        <ul>
+            <li>Sorting: Online retailers often arrange products based on price or popularity.</li>
+            <li>Searching: Locating a contact in a mobile device or a product in an inventory.</li>
+        </ul>
+
+        <h2>8. The Relevance of Graph Algorithms in Spanning Trees and Shortest Paths</h2>
+        <ul>
+            <li><strong>Spanning Trees</strong>: A spanning tree comprises a set of edges connecting all vertices in a graph without forming cycles and is crucial for reducing connection costs in networks.
+                <div class="example">Example: In communication networks, spanning trees facilitate data routing while minimizing wiring and connection expenses. Algorithms like <strong>Kruskal’s</strong> and <strong>Prim’s</strong> assist in identifying the Minimum Spanning Tree (MST).</div>
+            </li>
+            <li><strong>Shortest Paths</strong>: Shortest path algorithms determine optimal routes between points, essential for minimizing travel costs and duration.
+                <div class="example">Example: 
+                    <ul>
+                        <li><strong>Dijkstra’s Algorithm</strong>: Widely used in GPS navigation for finding the shortest path between locations.</li>
+                        <li><strong>Bellman-Ford Algorithm</strong>: Identifies negative weight cycles, applicable in financial transactions.</li>
+                        <li><strong>Floyd-Warshall Algorithm</strong>: Computes the shortest paths among all nodes, useful for network routing tables.</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+ 
+        <h2>9. Algorithm Design Techniques: An Overview</h2>
+        <ul>
+            <li><strong>Divide and Conquer</strong>: Break down problems into smaller, manageable segments, solve them individually, and then combine solutions.
+                <div class="example">Example: Merge Sort and Quick Sort for extensive datasets.</div>
+                <div class="significance">Significance: This method simplifies overarching issues by concentrating on smaller tasks.</div>
+            </li>
+            <li><strong>Step-by-Step Optimization</strong>: Prioritize making optimal decisions at each step to achieve an overall optimal outcome.
+                <div class="example">Example: Kruskal’s and Prim’s for Minimum Spanning Trees.</div>
+                <div class="significance">Significance: Effective for optimization when a greedy method confirms directionality.</div>
+            </li>
+            <li><strong>Backtracking</strong>: Systematically explore all potential solutions, reverting when necessary.
+                <div class="example">Example: Solving the N-Queens problem or Sudoku.</div>
+                <div class="significance">Significance: Ideal for scenarios requiring comprehensive exploration.</div>
+            </li>
+            <li><strong>Branch and Bound</strong>: Analogous to backtracking, this method uses bounds to eliminate choices that cannot yield optimal solutions.
+                <div class="example">Example: The Traveling Salesman Problem (TSP).</div>
+                <div class="significance">Significance: This approach mitigates workload in optimization challenges.</div>
+            </li>
+        </ul>
+
+        <h2>10. Determining Efficient Solutions for Complex Problems</h2>
+        <p>To ascertain the most efficient methodology, analyzing the problem setup and inherent constraints is crucial. Identifying overlapping issues may indicate the necessity for dynamic programming, while selection problems may warrant a greedy approach. Evaluating time and space efficiency will aid in selecting the most appropriate solution.</p>
+ 
+        <h2>11. Criteria for Evaluating Solution Effectiveness</h2>
+        <p>When assessing a solution's effectiveness, I consider its accuracy, efficiency in terms of time and space, scalability, and robustness. Additionally, practical applicability and adherence to requirements are paramount in determining the overall viability of the solution.</p>
+    
+        <h2>12. Adapting Existing Solutions to Address New Challenges</h2>
+        <p>To accommodate new challenges, it is essential to analyze how the adjustments alter the original problem. Modifications to the existing algorithm may involve employing flexible designs or parameterized functions to facilitate adaptability and reusability.</p>
+  
+        <h2>13. The Benefits of Decomposing Problems</h2>
+        <p>Dividing problems into smaller components enhances manageability. For example, in resolving a graph-related challenge, foundational traversal techniques such as BFS or DFS were initially established, forming a basis for developing advanced solutions like shortest-path algorithms.</p>
+
+
+            `;
+            content.style.display = 'block';
+        }
+    function showImplementation(){
+            const content = document.getElementById('content');
+             content.innerHTML = `
+            <h1>Implementation Analysis Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Algorithm/Data Structure</th>
+                <th>Used? (Yes/No)</th>
+                <th>How and Where?</th>
+                <th>Space Efficiency</th>
+                <th>Time Efficiency</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Arrays</td>
+                <td>Yes</td>
+                <td>Storing static data such as transportation routes, windmill energy outputs.</td>
+                <td>O(n)</td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+                <td>Structures</td>
+                <td>Yes</td>
+                <td>Organizing complex data for industrial outputs and tourism categories.</td>
+                <td>O(n)</td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+                <td>List</td>
+                <td>Yes</td>
+                <td>Managing dynamic lists of transport schedules or tourist locations.</td>
+                <td>O(n)</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td>Stack</td>
+                <td>No</td>
+                <td>Not directly applicable to these cases.</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Queue</td>
+                <td>Yes</td>
+                <td>Scheduling transport or industrial tasks and managing tourist queues.</td>
+                <td>O(n)</td>
+                <td>O(1) for enqueue/dequeue</td>
+            </tr>
+            <tr>
+                <td>Binary Tree</td>
+                <td>No</td>
+                <td>Not directly used for these business cases.</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Binary Search Tree</td>
+                <td>Yes</td>
+                <td>Searching sorted data, like tourist spots by popularity or industries by category.</td>
+                <td>O(n)</td>
+                <td>O(log n)</td>
+            </tr>
+            <tr>
+                <td>AVL Tree</td>
+                <td>No</td>
+                <td>Not prioritized for balanced operations in these cases.</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>2-3 Tree</td>
+                <td>No</td>
+                <td>Not used for this scope.</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Red-Black Tree</td>
+                <td>No</td>
+                <td>Not directly applicable.</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Trie</td>
+                <td>Yes</td>
+                <td>Searching keywords in tourism or transport databases.</td>
+                <td>O(n*m)</td>
+                <td>O(k)</td>
+            </tr>
+            <tr>
+                <td>Heap</td>
+                <td>Yes</td>
+                <td>Managing priority queues in traffic optimization or industry scheduling.</td>
+                <td>O(n)</td>
+                <td>O(log n)</td>
+            </tr>
+            <tr>
+                <td>Lookup Table</td>
+                <td>Yes</td>
+                <td>Storing predefined configurations for windmill performance or transport hubs.</td>
+                <td>O(n)</td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+                <td>Sparse Table</td>
+                <td>No</td>
+                <td>Not directly applicable here.</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Fenwick Tree</td>
+                <td>No</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Segment Tree</td>
+                <td>Yes</td>
+                <td>Range queries for monitoring windmill energy outputs or weather patterns.</td>
+                <td>O(n)</td>
+                <td>O(log n)</td>
+            </tr>
+            <tr>
+                <td>Skip List</td>
+                <td>No</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Union-Find</td>
+                <td>Yes</td>
+                <td>Analyzing connectivity in transportation networks.</td>
+                <td>O(n)</td>
+                <td>O(log n)</td>
+            </tr>
+            <tr>
+                <td>Hashing</td>
+                <td>Yes</td>
+                <td>Indexing large datasets for industrial or tourism-related information.</td>
+                <td>O(n)</td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+                <td>DFS</td>
+                <td>Yes</td>
+                <td>Exploring graph-based transportation networks and tourist maps.</td>
+                <td>O(n + m)</td>
+                <td>O(n + m)</td>
+            </tr>
+            <tr>
+                <td>BFS</td>
+                <td>Yes</td>
+                <td>Shortest paths for transportation or windmill maintenance logistics.</td>
+                <td>O(n + m)</td>
+                <td>O(n + m)</td>
+            </tr>
+            <tr>
+                <td>Quick Sort</td>
+                <td>Yes</td>
+                <td>Sorting real-time data, like industrial production rates or tourist traffic.</td>
+                <td>O(log n)</td>
+                <td>O(n log n)</td>
+            </tr>
+            <tr>
+                <td>Boyer-Moore</td>
+                <td>Yes</td>
+                <td>Searching patterns in tourism descriptions or industrial datasets.</td>
+                <td>O(n)</td>
+                <td>O(m + k)</td>
+            </tr>
+            <tr>
+                <td>Knuth-Morris-Pratt</td>
+                <td>Yes</td>
+                <td>Searching patterns in transport or windmill performance reviews.</td>
+                <td>O(n)</td>
+                <td>O(n + m)</td>
+            </tr>
+            <tr>
+                <td>Kruskal</td>
+                <td>Yes</td>
+                <td>Building minimum spanning trees for transport or windmill network optimization.</td>
+                <td>O(n log n)</td>
+                <td>O(e log e)</td>
+            </tr>
+            <tr>
+                <td>Prim</td>
+                <td>Yes</td>
+                <td>Optimizing transportation or energy grids like windmill connections.</td>
+                <td>O(n^2) or O(e + log n)</td>
+                <td>O(n log n)</td>
+            </tr>
+            <tr>
+                <td>Dijkstra</td>
+                <td>Dijkstra</td>
+                <td>Yes</td>
+                <td>Finding shortest paths in transportation or industrial logistics.</td>
+                <td>O(n^2) O(n log n)</td>
+            </tr>
+            <tr>
+                <td>Floyd</td>
+                <td>Yes</td>
+                <td>Multi-source shortest paths for transport networks or wind energy systems.</td>
+                <td>O(n^3)</td>
+                <td>O(n^3)</td>
+            </tr>
+            <tr>
+                <td>Warshall</td>
+                <td>Yes</td>
+                <td>Connectivity analysis for transportation and windmill networks.</td>
+                <td>O(n^3)</td>
+                <td>O(n^3)</td>
+            </tr>
+            <tr>
+                <td>Bellman-Ford</td>
+                <td>Yes</td>
+                <td>Handling edge weights in transport costs or wind energy transfer paths.</td>
+                <td>O(n^2)</td>
+                <td>O(n^2)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+      `;
+      content.style.display = 'block';
+        }
+        function showphase(){
+            const content = document.getElementById('content');
+             content.innerHTML = `
+             <h1>Computational Thinking Table 1</h1>
+                <table>
+        <thead>
+            <tr>
+                <th><span class="highlight">Idea</span></th>
+                <th><span class="highlight">Description</span></th>
+                <th><span class="highlight">Can you use this in your project?</span></th>
+                <th><span class="highlight">How and Where?</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="highlight">Decomposition</span></td>
+                <td>Divide the problem into smaller manageable parts.</td>
+                <td>Yes</td>
+                <td>
+                    Breaking transportation planning into route optimization, traffic control, and maintenance.<br>
+                    Splitting tourism into destination management, tourist flow analysis, and promotional strategies.<br>
+                    For industries, dividing into resource allocation, production scheduling, and supply chain.<br>
+                    For windmills, managing site selection, energy output analysis, and maintenance scheduling.
+                </td>
+            </tr>
+            <tr>
+                <td><span class="highlight">Pattern Recognition</span></td>
+                <td>Identifying common recurring patterns.</td>
+                <td>Yes</td>
+                <td>
+                    Observing traffic congestion patterns for transportation solutions.<br>
+                    Analyzing peak tourist seasons and trends in tourist preferences.<br>
+                    Recognizing repetitive industrial resource usage and production bottlenecks.<br>
+                    Identifying wind energy fluctuations based on seasonal and geographic patterns.
+                </td>
+            </tr>
+            <tr>
+                <td><span class="highlight">Abstraction</span></td>
+                <td>Keep only the required data for the task.</td>
+                <td>Yes</td>
+                <td>
+                    Focusing on key metrics like travel time and route efficiency for transportation.<br>
+                    Simplifying tourism data to just visitor demographics and most visited locations.<br>
+                    Highlighting core industrial outputs and key performance indicators (KPIs).<br>
+                    Retaining only relevant windmill performance metrics like energy output and downtime.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+        <h1>Computational Ideas Table 2</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>SL. No.</th>
+                <th>Idea</th>
+                <th>Description</th>
+                <th>Can you use this in your project?</th>
+                <th>How and where?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Brute Force</td>
+                <td>The definitional way of solving the problem</td>
+                <td>Yes</td>
+                <td>For transportation, finding all possible routes and choosing the best.<br>For tourism, testing all combinations of tourist packages to find the most appealing.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Divide and Conquer</td>
+                <td>Divide the problem into smaller parts (preferably half) and then solve the problem</td>
+                <td>Yes</td>
+                <td>For industries, splitting production tasks into smaller, parallel operations.<br>For windmills, dividing the wind farm area into regions to optimize individual turbine placement.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Decrease and Conquer</td>
+                <td>Decrease the input size by 1 or some constant k in each solution phase</td>
+                <td>Yes</td>
+                <td>For transportation, iteratively reducing congestion data until a traffic-free route is found.<br>For industries, gradually reducing supply chain bottlenecks in production cycles.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Transform and Conquer</td>
+                <td>Change the problem representation to something else</td>
+                <td>Yes</td>
+                <td>For tourism, converting customer reviews into a sentiment score for package optimization.<br>For transportation, transforming road network data into a graph for easier analysis of shortest paths.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Dynamic Programming</td>
+                <td>Smaller solutions contribute to larger</td>
+                <td>Yes</td>
+                <td>For transportation, solving smaller sub-problems like city-to-city travel to build an entire route map.<br>For windmills, calculating cumulative energy production using smaller regional data.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Greedy Technique</td>
+                <td>Select optimal choice in each iteration</td>
+                <td>Yes</td>
+                <td>For industries, choosing the supplier with the lowest cost at each step in procurement.<br>For tourism, selecting the most popular destinations to promote based on visitor feedback.</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Space and Time Tradeoff</td>
+                <td>If you optimize time, you lose space (example: Hashing)</td>
+                <td>Yes</td>
+                <td>For industries, storing precomputed data like inventory levels in lookup tables for faster access.<br>For transportation, storing pre-calculated routes in a hash table for quick retrieval.</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Backtracking</td>
+                <td>Prune the not required state space tree element</td>
+                <td>Yes</td>
+                <td>For transportation, finding the best route by discarding paths with traffic congestion.<br>For tourism, eliminating less appealing tourist packages based on constraints like budget or preferences.</td>
+            </tr>
+        </tbody>
+    </table>
+        <h1>Computational Ideas Table 3</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>SL. No.</th>
+                <th>Idea</th>
+                <th>Description</th>
+                <th>Can you use this in your project?</th>
+                <th>How and where?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Brave and Cautious Travel</td>
+                <td>Travel till the dead end or breadth-wise</td>
+                <td>Yes</td>
+                <td>For transportation, BFS for finding optimal routes or exploring all possible connections in a road network.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pruning</td>
+                <td>Remove the not required part</td>
+                <td>Yes</td>
+                <td>For tourism, removing unnecessary destinations from a tour plan based on visitor preferences.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Lazy Propagation</td>
+                <td>Do not update unless need be</td>
+                <td>Yes</td>
+                <td>For windmills, delaying updates to the power grid connection until critical thresholds are met.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Sliding Window</td>
+                <td>A smaller view of dataset</td>
+                <td>Yes</td>
+                <td>For industries, monitoring production output over a fixed time window to detect inefficiencies.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Level Order Traversal</td>
+                <td>From each level, left to right</td>
+                <td>Yes</td>
+                <td>For hierarchical transport systems, analyzing routes level by level for optimal connectivity.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Hierarchical Data and Trees</td>
+                <td>Organization of data</td>
+                <td>Yes</td>
+                <td>For industries, organizing supply chain data into a tree structure to easily navigate dependencies.</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Edge Relaxation</td>
+                <td>Select the minimum edge and make it part of solution set</td>
+                <td>Yes</td>
+                <td>For transportation, applying edge relaxation in algorithms like Dijkstra’s for shortest path calculation.</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Balancing a Tree</td>
+                <td>Is the tree (data) skewed? Do we need to balance?</td>
+                <td>Yes</td>
+                <td>For tourism, balancing a decision tree of customer preferences for better recommendation accuracy.</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Kleene Closure</td>
+                <td>Transitive property</td>
+                <td>Yes</td>
+                <td>For transportation, determining indirect connections between cities in a road network.</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Pre-Computing</td>
+                <td>Pre-compute and keep some results</td>
+                <td>Yes</td>
+                <td>For windmills, precomputing energy output predictions for quick resource allocation.</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Parental Dominance</td>
+                <td>Maintain a priority data</td>
+                <td>Yes</td>
+                <td>For industries, ensuring that critical production tasks (parents) take precedence over dependent tasks.</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Prefix and Suffix</td>
+                <td>Generate prefix and suffix</td>
+                <td>Yes</td>
+                <td>For tourism, analyzing tourist reviews by segmenting keywords into prefixes and suffixes for sentiment analysis.</td>
+            </tr>
+        </tbody>
+    </table>
+       `;
+      content.style.display = 'block';
+        }
+            
+    </script>
+</head>
+<body>
+    <div class="home">
+        <div class="home-box">
+            <h2>Project Presentation</h2>
+            <p class="subheading">Innovative Approaches to Sustainability and Urban Development</p>
+            
+        </div>
+    </div>
+
+   
+
+    <div class="button-container">
+        <button onclick="showCourseReflection()">Course reflection</button>
+        <button onclick="showBusinessCases()">Business Cases</button>
+        <button onclick="showSDGMapping()">SDG Mapping</button>
+        <button onclick="showCodeImplementation()">Code Implementation</button>
+        <button onclick="showImplementation()">Implementation analysis</button>
+        <button onclick="showphase()">Computational table</button>
+<a href="https://01fe23bcs144.github.io/Aarohan/ssssss.docx" target="_blank" class="button">Sample Implementation</a>
+
+
+    </div>
+
+    <div id="content"></div>
+</body>
+</html>
